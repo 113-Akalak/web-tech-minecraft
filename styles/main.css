@@ -1,0 +1,134 @@
+.navbar {
+    position: fixed;
+    top: 0px;
+    background-color: rgba(38, 36, 35, .95);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    display: inline-flex;
+    z-index: 999;
+
+    .nav-content {
+        display: flex;
+        padding-inline: 3.5rem;
+        padding-block: 1.4rem;
+        align-items: center;
+        /* justify-content: space-between; */
+        width: 100%;
+
+        .nav-logo {
+            width: 100%;
+            height: 37px;
+            flex: 1;
+        }
+
+        .nav-link {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            flex: 1;
+            justify-content: center;
+
+            li,
+            a {
+                color: var(--mc-core-white);
+                text-decoration: none;
+                font-family: "Noto Sans";
+                transition: 0.2s;
+                font-size: 13px;
+
+                :hover {
+                    color: var(--mc-core-green-3);
+                }
+            }
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            /* flex: 1; */
+            justify-content: end;
+
+            .nav-action-buynow {
+                border: 1px solid var(--mc-core-green-3);
+                padding-inline: 1rem;
+                padding-block: 0.5rem;
+                color: var(--mc-core-white);
+            }
+
+            .nav-action-search {
+                img {
+                    width: 100%;
+                    height: 28px;
+                    /* :hover{
+                        fill: var(--mc-core-green-3);
+                    } */
+                }
+            }
+
+            .nav-action-account {
+                color: var(--mc-core-white);
+
+                :hover {
+                    color: var(--mc-core-green-3);
+                }
+            }
+        }
+    }
+}
+
+.container {
+    max-width: 60%;
+    margin: auto;
+    position: relative;
+}
+
+.hero-section {
+    position: relative;
+    z-index: 0;
+
+    .hero-video {
+        height: 800px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .hero-card {
+        background-color: var(--mc-core-off-black);
+        padding: 50px;
+        position: absolute;
+        bottom: -100px;
+        z-index: 1;
+        color: var(--mc-core-white);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 400px;
+
+        h1 {
+            font-family: var(--mc-legends-fontlist);
+            font-size: 20px;
+        }
+
+        p {
+            /* font */
+            font-weight: 400;
+            color: var(--mc-core-grey-2);
+            /* letter-spacing: 2px; */
+            line-height: 1.5;
+        }
+    }
+
+    .hero-card:before {
+        background-color: var(--mc-core-off-black);
+        border: 1px solid white;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+}
+
+.mc-footer{
+    background-color: var(--mc-core-green-3);
+}
