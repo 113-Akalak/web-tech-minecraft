@@ -4,55 +4,749 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Minecraft homepage clone for a web technology project.">
     <title>Minecraft • Akalak Kruaboon</title>
     <link rel="stylesheet" href="./styles/base.css">
+    <script src="./scripts/main.js" defer></script>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <div>
-                <img src="./assets/svg/logo.svg" class="nav-logo" />
-            </div>
-            <ul class="nav-link">
-                <li><a href="">GAMES</a></li>
-                <li><a href="">SHOP</a></li>
-                <li><a href="">EXPORE</a></li>
-                <li><a href="">LEARN</a></li>
-                <li><a href="">SUPPORT</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button type="button" class="nav-action-buynow">BUY NOW</button>
-                <button type="button" class="nav-action-search">
-                    <img src="./assets/images/icons/search-icon.png" />
-                </button>
-                <button type="button" class="nav-action-account">
-                    ACCOUNT
-                </button>
-            </div>
-        </div>
-    </nav>
+    <header class="site-header" data-site-header>
+        <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <section class="hero-section">
-        <video class="hero-video" loop autoplay muted
-            src="./assets/video/Homepage_Ambient-Hero-A_SPGD-26-Takeover_1800x1080.mp4">
-        </video>
+        <nav class="navbar" aria-label="Primary navigation">
+            <a class="brand-link" href="./index.html" aria-label="Minecraft home">
+                <img src="./assets/svg/logo.svg" class="brand-logo" alt="Minecraft">
+            </a>
 
-        <div class="container">
-            <div class="hero-card">
-                <h1>The Tiny Takeover drop</h1>
-                <p>New versions of baby mobs are causing cuteness overload across biomes and builds. Collect, cuddle, and coo over our new tiny rascals.</p>
-                <div>
-                    <button class="btn-primary">SEE GAME DROP</button>
+            <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"
+                data-menu-toggle>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" data-nav-menu>
+                <ul class="nav-links">
+                    <li><button class="nav-link" type="button" data-panel-trigger="games"
+                            aria-expanded="false">Games</button></li>
+                    <li><button class="nav-link" type="button" data-panel-trigger="shop"
+                            aria-expanded="false">Shop</button></li>
+                    <li><button class="nav-link" type="button" data-panel-trigger="explore"
+                            aria-expanded="false">Explore</button></li>
+                    <li><button class="nav-link" type="button" data-panel-trigger="learn"
+                            aria-expanded="false">Learn</button></li>
+                    <li><a class="nav-link nav-link--plain" href="#main-content">Support</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a class="buy-now-link" href="#games-title">Buy Now</a>
+                    <button class="icon-button" type="button" aria-label="Search" aria-expanded="false"
+                        data-search-open>
+                        <img src="./assets/images/icons/search-icon.svg" alt="">
+                    </button>
+                    <button class="account-button" type="button" aria-expanded="false" data-account-toggle>
+                        Account
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="mega-panel" data-panel="games" hidden>
+            <div class="mega-shell">
+                <div class="mega-tabs" role="tablist" aria-label="Games menu">
+                    <button class="mega-tab is-active" type="button" role="tab" aria-selected="true"
+                        data-mega-tab="minecraft">Minecraft Java & Bedrock</button>
+                    <button class="mega-tab" type="button" role="tab" aria-selected="false"
+                        data-mega-tab="dungeons2">Minecraft Dungeons II</button>
+                    <button class="mega-tab" type="button" role="tab" aria-selected="false"
+                        data-mega-tab="dungeons">Minecraft Dungeons</button>
+                    <button class="mega-tab" type="button" role="tab" aria-selected="false"
+                        data-mega-tab="legends">Minecraft Legends</button>
+                </div>
+
+                <div class="mega-content">
+                    <div class="mega-card-grid is-active" data-mega-panel="minecraft">
+                        <a class="mega-card mega-card--wide" href="#games-title">
+                            <img src="./assets/images/minecraft/Global-Header_Image-Tile_MC-Java-Bedrock_570x321.jpg"
+                                alt="">
+                            <strong>Minecraft</strong>
+                            <span>Explore your own unique world, survive the night, and create anything you can imagine.</span>
+                        </a>
+                        <a class="mega-card" href="#news-title">
+                            <img src="./assets/images/minecraft/Global-Header_Image-Tile_Game-Drops_321x321_1.jpg"
+                                alt="">
+                            <strong>Game Drops</strong>
+                            <span>Explore the history of Minecraft updates.</span>
+                        </a>
+                        <a class="mega-card" href="#games-title">
+                            <img src="./assets/images/minecraft/Global-Header_Image-Tile_Realms_321x321.jpg" alt="">
+                            <strong>Minecraft Realms</strong>
+                            <span>Play with your friends on your own personal server.</span>
+                        </a>
+                    </div>
+
+                    <div class="mega-card-grid" data-mega-panel="dungeons2">
+                        <a class="mega-card mega-card--wide" href="#games-title">
+                            <img src="./assets/images/minecraft/Global-Header_Image-Tile_Dungeons-II_570x321.jpg"
+                                alt="">
+                            <strong>Minecraft Dungeons II</strong>
+                            <span>Embark on an all-new dungeon crawling adventure.</span>
+                        </a>
+                        <a class="mega-card" href="#trailers-title">
+                            <img src="./assets/images/minecraft/Global-Header_Image-Dungeons-II-Trailer_321x321.jpg"
+                                alt="">
+                            <strong>Gameplay Trailer</strong>
+                            <span>Watch the adventure come to life.</span>
+                        </a>
+                        <a class="mega-card" href="#games-title">
+                            <img src="./assets/images/minecraft/MCD2_Wishlist_Homepage_1080x1080.jpg" alt="">
+                            <strong>Wishlist Today</strong>
+                            <span>Stay up to date on what is coming next.</span>
+                        </a>
+                    </div>
+
+                    <div class="mega-card-grid" data-mega-panel="dungeons">
+                        <a class="mega-card mega-card--wide" href="#games-title">
+                            <img src="./assets/images/minecraft/Global-Header_Image-Tile_MC-Dungeons_570x321.jpg"
+                                alt="">
+                            <strong>Minecraft Dungeons</strong>
+                            <span>Classic action-adventure inspired by dungeon crawlers.</span>
+                        </a>
+                        <a class="mega-card" href="#games-title">
+                            <img src="./assets/images/minecraft/Global-Header_Image-Tile_MCD-Ultimate-Bundle_321x321.jpg"
+                                alt="">
+                            <strong>Ultimate Bundle</strong>
+                            <span>Explore the full dungeon experience.</span>
+                        </a>
+                        <a class="mega-card" href="#games-title">
+                            <img src="./assets/images/minecraft/Global-Header_Image-Tile_MCD-Ultimate-Edition_321x321.jpg"
+                                alt="">
+                            <strong>Ultimate Edition</strong>
+                            <span>All the action in one collection.</span>
+                        </a>
+                    </div>
+
+                    <div class="mega-card-grid" data-mega-panel="legends">
+                        <a class="mega-card mega-card--wide" href="#games-title">
+                            <img src="./assets/images/minecraft/Global-Header_Image-Tile_MC-Legends_570x321.jpg"
+                                alt="">
+                            <strong>Minecraft Legends</strong>
+                            <span>Lead allies to defend the Overworld.</span>
+                        </a>
+                        <a class="mega-card" href="#games-title">
+                            <img src="./assets/images/minecraft/Global-Header_Image-Tile_MCL-Deluxe-Edition_321x321.jpg"
+                                alt="">
+                            <strong>Deluxe Edition</strong>
+                            <span>Gather your allies for heroic battles.</span>
+                        </a>
+                        <a class="mega-card" href="#games-title">
+                            <img src="./assets/images/minecraft/Global-Header_Image-Tile_MCL-Deluxe-Skin-Pack_321x321.jpg"
+                                alt="">
+                            <strong>Deluxe Skin Pack</strong>
+                            <span>Bring new looks to the legend.</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mega-side-links">
+                    <a href="#games-title">Buy Minecraft</a>
+                    <a href="#games-title">Minecraft Triple Bundle</a>
+                    <a href="#main-content">New to Minecraft?</a>
+                    <a href="#games-title">Try Minecraft Free</a>
+                    <a href="#download-title">Download Minecraft</a>
+                    <a href="#download-title">Redeem a Gift Code</a>
                 </div>
             </div>
         </div>
 
-    </section>
+        <div class="mega-panel" data-panel="shop" hidden>
+            <div class="mega-shell mega-shell--simple">
+                <div class="mega-tabs" role="presentation">
+                    <button class="mega-tab is-active" type="button">Marketplace</button>
+                    <button class="mega-tab" type="button">Merch</button>
+                    <button class="mega-tab" type="button">Downloads</button>
+                </div>
+                <div class="mega-card-grid is-active">
+                    <a class="mega-card mega-card--wide" href="#marketplace-title">
+                        <img src="./assets/images/minecraft/Global-Header_Image-Tile_Visit-Marketplace_570x321.jpg"
+                            alt="">
+                        <strong>Visit Marketplace</strong>
+                        <span>Discover skins, worlds, texture packs, and add-ons.</span>
+                    </a>
+                    <a class="mega-card" href="#marketplace-title">
+                        <img src="./assets/images/minecraft/Global-Header_Image-Tile_Add-Ons_321x321.jpg" alt="">
+                        <strong>Add-Ons</strong>
+                        <span>Add custom blocks, items, mobs, recipes, and more.</span>
+                    </a>
+                    <a class="mega-card" href="#marketplace-title">
+                        <img src="./assets/images/minecraft/Global-Header_Image-Tile_Texture-Packs_321x321.jpg"
+                            alt="">
+                        <strong>Texture Packs</strong>
+                        <span>Transform the look and feel of your world.</span>
+                    </a>
+                </div>
+                <div class="mega-side-links">
+                    <a href="#marketplace-title">Marketplace</a>
+                    <a href="#marketplace-title">Minecraft Shop</a>
+                    <a href="#marketplace-title">Minecoins</a>
+                    <a href="#marketplace-title">Become a Partner</a>
+                </div>
+            </div>
+        </div>
 
+        <div class="mega-panel" data-panel="explore" hidden>
+            <div class="mega-shell mega-shell--simple">
+                <div class="mega-tabs" role="presentation">
+                    <button class="mega-tab is-active" type="button">News</button>
+                    <button class="mega-tab" type="button">Community</button>
+                    <button class="mega-tab" type="button">Follow</button>
+                </div>
+                <div class="mega-card-grid is-active">
+                    <a class="mega-card mega-card--wide" href="#news-title">
+                        <img src="./assets/images/minecraft/Global-Header_Image-Tile_Whats-Happening_570x321.jpg"
+                            alt="">
+                        <strong>What's Happening</strong>
+                        <span>Catch up on Minecraft updates and featured stories.</span>
+                    </a>
+                    <a class="mega-card" href="#news-title">
+                        <img src="./assets/images/minecraft/Global-Header_Image-Tile_Minecraft-LIVE_321x321.jpg"
+                            alt="">
+                        <strong>Minecraft Live</strong>
+                        <span>News about games, creators, and more.</span>
+                    </a>
+                    <a class="mega-card" href="#follow-title">
+                        <img src="./assets/images/minecraft/Global-Header_Image-Tile_Youtube_570x321.jpg" alt="">
+                        <strong>YouTube</strong>
+                        <span>Watch updates, shows, and trailers.</span>
+                    </a>
+                </div>
+                <div class="mega-side-links">
+                    <a href="#news-title">Featured News</a>
+                    <a href="#news-title">Game Drops</a>
+                    <a href="#games-title">Creator Learning Portal</a>
+                    <a href="#main-content">Submit an Idea</a>
+                    <a href="#main-content">Report Bugs</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mega-panel" data-panel="learn" hidden>
+            <div class="mega-shell mega-shell--simple">
+                <div class="mega-tabs" role="presentation">
+                    <button class="mega-tab is-active" type="button">Start Here</button>
+                    <button class="mega-tab" type="button">Education</button>
+                    <button class="mega-tab" type="button">Safety</button>
+                </div>
+                <div class="mega-card-grid is-active">
+                    <a class="mega-card mega-card--wide" href="#main-content">
+                        <img src="./assets/images/minecraft/Global-Header_Image-Tile_Tips-For-Beginners_570x321.jpg"
+                            alt="">
+                        <strong>Tips for Beginners</strong>
+                        <span>New to Minecraft? Start with the basics.</span>
+                    </a>
+                    <a class="mega-card" href="#games-title">
+                        <img src="./assets/images/minecraft/Header-Education-MC-Hero.png" alt="">
+                        <strong>Minecraft Education</strong>
+                        <span>Unlock a world of learning at school and home.</span>
+                    </a>
+                    <a class="mega-card" href="#main-content">
+                        <img src="./assets/images/minecraft/CyberSafe_SplashArt_321.png" alt="">
+                        <strong>Online Safety</strong>
+                        <span>Explore digital citizenship worlds and lessons.</span>
+                    </a>
+                </div>
+                <div class="mega-side-links">
+                    <a href="#main-content">New to Minecraft?</a>
+                    <a href="#games-title">Try Minecraft Free</a>
+                    <a href="#games-title">Minecraft Realms</a>
+                    <a href="#main-content">Support</a>
+                    <a href="#main-content">Credits</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="account-popover" data-account-menu hidden>
+            <a href="#download-title">Sign in</a>
+            <a href="#download-title">Create account</a>
+            <a href="#download-title">Download</a>
+            <a href="#download-title">Redeem</a>
+        </div>
+
+        <div class="search-overlay" data-search-overlay hidden>
+            <form class="search-box" action="./index.html" role="search">
+                <label for="site-search">Search</label>
+                <div>
+                    <img src="./assets/images/icons/search-icon.svg" alt="">
+                    <input id="site-search" type="search" name="q" placeholder="Search Minecraft.net">
+                </div>
+                <p>Popular Discoveries</p>
+                <nav class="search-suggestions" aria-label="Suggested searches">
+                    <a href="#games-title">
+                        <img src="./assets/images/minecraft/Search-Panel-Thumb_Vanilla_238x133.png" alt="">
+                        <span>Minecraft</span>
+                    </a>
+                    <a href="#marketplace-title">
+                        <img src="./assets/images/minecraft/Search-Panel-Thumb_Marketplace_238x133.png" alt="">
+                        <span>Skins & DLC</span>
+                    </a>
+                    <a href="#main-content">
+                        <img src="./assets/images/minecraft/Search-Panel-Thumb_Skins-Capes_238x133.png" alt="">
+                        <span>Change Java Skins & Capes</span>
+                    </a>
+                    <a href="#games-title">
+                        <img src="./assets/images/minecraft/Search-Panel-Thumb_Realms_238x133.png" alt="">
+                        <span>Minecraft Realms</span>
+                    </a>
+                </nav>
+            </form>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <h1 class="sr-only">Welcome to the official site of Minecraft</h1>
+
+        <section class="hero-section" aria-label="Featured Minecraft news">
+            <div class="hero-media" data-hero-media>
+                <video class="hero-video" loop autoplay muted playsinline
+                    src="./assets/video/Homepage_Ambient-Hero-A_SPGD-26-Takeover_1800x1080.mp4">
+                </video>
+            </div>
+            <div class="hero-shade"></div>
+
+            <div class="hero-content page-shell">
+                <article class="hero-card">
+                    <h2 data-hero-title>Your bonus Minecraft LIVE!</h2>
+                    <p data-hero-copy>We're back with fresh news from the world of Minecraft in this bonus show. Tune in
+                        on May 30.</p>
+                    <a class="btn-primary" href="#news-title" data-hero-link>Stay tuned</a>
+                </article>
+
+                <div class="hero-tabs" role="tablist" aria-label="Featured slides">
+                    <button class="hero-tab is-active" type="button" role="tab" aria-selected="true" data-slide="0"
+                        style="--tab-image: url('../assets/images/minecraft/Homepage_Hero-A-Thumbnail-0_MCL-Twitch-26_220x97_01.png');">
+                        <span>Minecraft LIVE</span>
+                    </button>
+                    <button class="hero-tab" type="button" role="tab" aria-selected="false" data-slide="1"
+                        style="--tab-image: url('../assets/images/minecraft/Homepage_Hero-A-Spring-Drop-26-Thumbnail-0_Image-ID_220x97.jpg');">
+                        <span>Tiny Takeover</span>
+                    </button>
+                    <button class="hero-tab" type="button" role="tab" aria-selected="false" data-slide="2"
+                        style="--tab-image: url('../assets/images/minecraft/MCD2_Wishlist_Homepage_220x97.jpg');">
+                        <span>Dungeons II</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block page-shell discover-section" aria-labelledby="games-title">
+            <div class="section-heading">
+                <h2 id="games-title">Discover our games</h2>
+                <a href="#games-title">Get Minecraft, Dungeons,
+                    and Legends with the Triple Bundle &gt;</a>
+            </div>
+
+            <div class="game-grid">
+                <a class="game-card game-card--minecraft" href="#games-title">
+                    <div class="game-art">
+                        <img src="./assets/images/minecraft/Homepage_Discover-our-games_MC-Vanilla-KeyArt_864x864.jpg"
+                            alt="Minecraft Java and Bedrock">
+                    </div>
+                    <span>Minecraft</span>
+                    <strong>Sandbox Survival, Adventure</strong>
+                    <small>Single-player + Multiplayer</small>
+                    <div class="platform-row" aria-label="Available platforms" role="list">
+                        <img src="./assets/svg/platforms-source/platforms/windows.svg" alt="Windows" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/linux.svg" alt="Linux" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/xbox.svg" alt="Xbox" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/playstation.svg" alt="PlayStation" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/nintendo-switch.svg" alt="Nintendo Switch" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/mac.svg" alt="Mac" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/android.svg" alt="Android" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/chrome.svg" alt="Chrome" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/amazon-fire.svg" alt="Amazon Fire" role="listitem">
+                    </div>
+                </a>
+                <a class="game-card game-card--dungeons2" href="#games-title">
+                    <div class="game-art">
+                        <img src="./assets/images/minecraft/Homepage_Discover-our-games_MC-Spicewood-KeyArt_864x864.jpg.jpg"
+                            alt="Minecraft Dungeons II">
+                    </div>
+                    <span>Minecraft Dungeons II</span>
+                    <strong>Dungeon Crawl, Action RPG</strong>
+                    <small>Single-Player + Multiplayer</small>
+                    <div class="platform-row" aria-label="Available platforms" role="list">
+                        <img src="./assets/svg/platforms-source/platforms/windows.svg" alt="Windows" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/xbox.svg" alt="Xbox" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/playstation.svg" alt="PlayStation" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/nintendo-switch.svg" alt="Nintendo Switch" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/steam.svg" alt="Steam" role="listitem">
+                    </div>
+                </a>
+                <a class="game-card game-card--dungeons" href="#games-title">
+                    <div class="game-art">
+                        <img src="./assets/images/minecraft/Homepage_Discover-our-games_MC-Dungeons-KeyArt_864x864.jpg"
+                            alt="Minecraft Dungeons">
+                    </div>
+                    <span>Minecraft Dungeons</span>
+                    <strong>Dungeon Crawl, Action RPG</strong>
+                    <small>Single-player + Multiplayer</small>
+                    <div class="platform-row" aria-label="Available platforms" role="list">
+                        <img src="./assets/svg/platforms-source/platforms/windows.svg" alt="Windows" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/xbox.svg" alt="Xbox" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/playstation.svg" alt="PlayStation" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/nintendo-switch.svg" alt="Nintendo Switch" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/steam.svg" alt="Steam" role="listitem">
+                    </div>
+                </a>
+                <a class="game-card game-card--legends" href="#games-title">
+                    <div class="game-art">
+                        <img src="./assets/images/minecraft/Homepage_Discover-our-games_MC-Legends-KeyArt_864x864.jpg"
+                            alt="Minecraft Legends">
+                    </div>
+                    <span>Minecraft Legends</span>
+                    <strong>Action RPG, Strategy</strong>
+                    <small>Single-player + Multiplayer</small>
+                    <div class="platform-row" aria-label="Available platforms" role="list">
+                        <img src="./assets/svg/platforms-source/platforms/windows.svg" alt="Windows" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/xbox.svg" alt="Xbox" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/playstation.svg" alt="PlayStation" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/nintendo-switch.svg" alt="Nintendo Switch" role="listitem">
+                        <img src="./assets/svg/platforms-source/platforms/steam.svg" alt="Steam" role="listitem">
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="miss-section" aria-labelledby="miss-title">
+            <div class="page-shell miss-shell">
+                <div class="miss-copy">
+                    <h2 id="miss-title">Don't<br>Miss This</h2>
+                    <p>Upgrade your gameplay with Minecraft DLC! Start exploring today with this free marketplace
+                        offer, just sign in to make it yours!</p>
+                    <a class="btn-gold" href="#download-title">Sign in and get it</a>
+                    <a class="miss-link" href="#marketplace-title">See all
+                        skin packs</a>
+                </div>
+                <article class="miss-card">
+                    <img src="./assets/images/CuteKittyHD_Thumbnail_0.jpg" alt="Cute Kitty HD Skin Pack">
+                    <h3>Cute Kitty HD Skin Pack</h3>
+                    <p><span>Skin Pack</span> by CupcakeBrianna</p>
+                    <div class="miss-meta">
+                        <strong>4.7</strong>
+                        <b>Free</b>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="marketplace-section" aria-labelledby="marketplace-title">
+            <div class="page-shell market-shell">
+                <div class="market-copy market-copy--center">
+                    <h2 id="marketplace-title">Marketplace Add-Ons</h2>
+                    <p>Now there are even more ways to change your Bedrock game, your way! Explore the new free and
+                        paid add-ons at Minecraft Marketplace today.</p>
+                    <a class="btn-primary" href="#marketplace-title">Explore Marketplace</a>
+                </div>
+                <div class="carousel-actions" aria-label="Marketplace controls">
+                    <button class="square-button" type="button" data-market-prev aria-label="Previous slide">‹</button>
+                    <button class="square-button" type="button" data-market-next aria-label="Next slide">›</button>
+                </div>
+                <div class="addon-track" data-market-track aria-label="Featured marketplace add-ons">
+                    <article style="--tile-image: url('../assets/images/AnimalArmor_Thumbnail_0.jpg');"><span>1 of 8</span><strong>Animal Armor+</strong><small>Waypoint Studios • 830</small>
+                    </article>
+                    <article style="--tile-image: url('../assets/images/jfc_mel_Thumbnail_0.jpg');"><span>2 of 8</span><strong>Mini Enchanted Libraries</strong><small>JFCrafters •
+                            660</small></article>
+                    <article style="--tile-image: url('../assets/images/RPG_Villagerr_Thumbnail_0.jpg');"><span>3 of 8</span><strong>RPG Villager Add-On</strong><small>Teplight • 990</small>
+                    </article>
+                    <article style="--tile-image: url('../assets/images/CuteKittyHD_Thumbnail_0.jpg');"><span>4 of 8</span><strong>Dragons Add-On</strong><small>Marketplace • 830</small>
+                    </article>
+                    <article style="--tile-image: url('../assets/images/minecraft/Global-Header_Image-Tile_Add-Ons_321x321.jpg');"><span>5 of 8</span><strong>Furniture Pack</strong><small>Creative build tools</small>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block page-shell trailer-section" aria-labelledby="trailers-title">
+            <div class="section-heading">
+                <h2 id="trailers-title">Gameplay Trailers</h2>
+            </div>
+
+            <div class="trailer-showcase">
+                <div class="trailer-tabs" role="tablist" aria-label="Gameplay trailer tabs">
+                    <button class="trailer-tab is-active" type="button" data-trailer="minecraft">
+                        <img class="trailer-icon" src="./assets/images/minecraft/Homepage_Gameplay-Trailer_MC-OV-logo_300x300.png"
+                            alt="" aria-hidden="true">
+                        <span>Minecraft</span>
+                    </button>
+                    <button class="trailer-tab" type="button" data-trailer="dungeons">
+                        <img class="trailer-icon"
+                            src="./assets/images/minecraft/Homepage_Gameplay-Trailer_MC-Dungeons-logo_300x300.png"
+                            alt="" aria-hidden="true">
+                        <span>Minecraft Dungeons</span>
+                    </button>
+                    <button class="trailer-tab" type="button" data-trailer="legends">
+                        <img class="trailer-icon"
+                            src="./assets/images/minecraft/Homepage_Gameplay-Trailer_MC-Legends-logo_300x300.png"
+                            alt="" aria-hidden="true">
+                        <span>Minecraft Legends</span>
+                    </button>
+                    <button class="trailer-tab" type="button" data-trailer="education">
+                        <img class="trailer-icon"
+                            src="./assets/images/minecraft/Homepage_Gameplay-Trailer_MC-Education-logo_300x300.png"
+                            alt="" aria-hidden="true">
+                        <span>Minecraft Education</span>
+                    </button>
+                </div>
+
+                <article class="trailer-panel">
+                    <div class="trailer-preview">
+                        <video muted loop playsinline autoplay data-trailer-video
+                            src="./assets/video/Homepage_Gameplay-Trailer_MC-OV_1080x720.mp4"></video>
+                        <button class="trailer-toggle" type="button" aria-label="Pause trailer" data-trailer-toggle></button>
+                        <a class="play-button" href="#trailers-title"
+                            data-trailer-youtube>Watch the trailer</a>
+                    </div>
+                    <div class="trailer-info">
+                        <h3 class="sr-only" data-trailer-title>Minecraft</h3>
+                        <div>
+                            <p data-trailer-copy>Explore your own unique worlds, survive the night, and create anything
+                                you can imagine!</p>
+                            <p data-trailer-note>Watch the sample video of Minecraft gameplay above, or select "watch
+                                the trailer" to see the full video on YouTube.</p>
+                        </div>
+                        <a class="btn-primary" href="#games-title"
+                            data-trailer-link>Get Minecraft</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="news-section" aria-labelledby="news-title">
+            <div class="page-shell">
+                <div class="section-heading section-heading--row">
+                    <h2 id="news-title">Newest news</h2>
+                    <a href="#news-title">See all news</a>
+                </div>
+                <div class="news-grid">
+                    <a href="#news-title"
+                        style="--news-image: url('../assets/images/minecraft/news/01-Vanilla-generic-277x277.jpg');">
+                        <span>News</span><strong>Friends List for Java Edition</strong><small>A new way to play with
+                            friends</small>
+                    </a>
+                    <a href="#news-title"
+                        style="--news-image: url('../assets/images/minecraft/news/02-Minecraft-Live-565.jpg');">
+                        <span>News</span><strong>Minecraft Live at TwitchCon</strong><small>Watch our bonus show on May
+                            30!</small>
+                    </a>
+                    <a href="#news-title"
+                        style="--news-image: url('../assets/images/minecraft/news/03-26.2-snapshot-7-277x277.jpg');">
+                        <span>News</span><strong>Minecraft 26.2 Snapshot 7</strong><small>A Minecraft Java
+                            Snapshot</small>
+                    </a>
+                    <a href="#news-title"
+                        style="--news-image: url('../assets/images/minecraft/news/04-26.2-snapshot-6-new-277x277.jpg');">
+                        <span>News</span><strong>Minecraft 26.2 Snapshot 6</strong><small>A Minecraft Java
+                            Snapshot</small>
+                    </a>
+                    <a href="#news-title"
+                        style="--news-image: url('../assets/images/minecraft/news/05-MCV-ChaosCubed-BPS-May5-EditorialExclusive-MagmaShenanigans-277x277.jpg');">
+                        <span>News</span><strong>Test the final features from the Chaos Cubed drop</strong><small>Feed
+                            magma to sulfur cubes and more!</small>
+                    </a>
+                    <a href="#news-title"
+                        style="--news-image: url('../assets/images/minecraft/news/06-26.20-277x277.jpg');">
+                        <span>News</span><strong>Minecraft: Bedrock Edition 26.20 Changelog</strong><small>See what's
+                            new in Minecraft Bedrock 26.20</small>
+                    </a>
+                    <a href="#news-title"
+                        style="--news-image: url('../assets/images/minecraft/news/07-LetsPlayFantasticPetsTile277x277.jpeg.jpg');">
+                        <span>Marketplace</span><strong>LET'S PLAY: FANTASTIC PETS</strong><small>All the fun of a pet
+                            without constantly having to clean litter trays!</small>
+                    </a>
+                    <a href="#news-title"
+                        style="--news-image: url('../assets/images/minecraft/news/08-MCV-ChaosCubed-BPS-Apr28-EditorialExclusive-CampByTheGeyser-565x565.jpg');">
+                        <span>News</span><strong>Let's dial up the chaos in testing</strong><small>Feed TNT to sulfur
+                            cubes and experiment with geysers</small>
+                    </a>
+                    <a href="#news-title"
+                        style="--news-image: url('../assets/images/minecraft/news/09-26.2-snapshot-5-277x277.jpg');">
+                        <span>News</span><strong>Minecraft 26.2 Snapshot 5</strong><small>A Minecraft Java
+                            Snapshot</small>
+                    </a>
+                    <a href="#games-title"
+                        style="--news-image: url('../assets/images/minecraft/news/10-touchgrass-277x277.jpg');">
+                        <span>News</span><strong>New on Java Realms: Catch Me Outside</strong><small>Nine maps to bring
+                            in the spring season!</small>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="download-band" aria-labelledby="download-title">
+            <div class="page-shell download-layout">
+                <img class="download-creeper" src="./assets/images/minecraft/Homepage_Download-Launcher_Creeper-Logo_500x500.png"
+                    alt="" aria-hidden="true">
+                <div>
+                    <h2 id="download-title">Need to redownload?</h2>
+                    <p>Already own the game, but need the Launcher? Looking for the Linux distribution or server files?
+                        Check out our Downloads page.</p>
+                </div>
+                <a class="btn-secondary" href="#download-title">Go to Downloads</a>
+            </div>
+        </section>
+
+        <section class="newsletter-section" aria-labelledby="newsletter-title">
+            <form class="page-shell newsletter-form" action="./index.html" method="get">
+                <div>
+                    <h2 id="newsletter-title">Get the latest Minecraft news!</h2>
+                    <p>Enter your email address, select your country or region, and submit. Opt out at any time. We
+                        promise not to spam you.</p>
+                </div>
+                <label>
+                    <span>Email Address <b>*</b></span>
+                    <input type="email" name="email" autocomplete="email" required>
+                </label>
+                <label>
+                    <span>Country/Region <b>*</b></span>
+                    <select name="country" required>
+                        <option>Thailand</option>
+                        <option value="">Choose One</option>
+                        <option>United States</option>
+                        <option>Japan</option>
+                        <option>Singapore</option>
+                    </select>
+                </label>
+                <label class="newsletter-check">
+                    <input type="checkbox" name="consent">
+                    <span>ฉันต้องการข้อมูล เคล็ดลับ และข้อเสนอเกี่ยวกับ Minecraft <a
+                            href="#main-content">คำชี้แจงสิทธิ์ส่วนบุคคล.</a></span>
+                </label>
+                <p class="newsletter-consent">By opting in, you agree to receive communications from Minecraft. You can
+                    always unsubscribe.</p>
+                <p class="newsletter-required"><b>*</b> Required Fields</p>
+                <button class="btn-primary" type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section class="collectibles-section" aria-labelledby="collectibles-title">
+            <div class="page-shell collectibles-shell">
+                <div class="market-copy">
+                    <h2 id="collectibles-title">Collectibles</h2>
+                    <p>The world of Minecraft is vast, so why not take it beyond its blocky borders? Customize your
+                        device with our favorite Minecraft wallpapers, social banners, and more!</p>
+                    <a class="text-link" href="#collectibles-title">See all collectibles</a>
+                </div>
+                <div class="carousel-actions">
+                    <button class="square-button" type="button" data-collect-prev aria-label="Previous slide">‹</button>
+                    <button class="square-button" type="button" data-collect-next aria-label="Next slide">›</button>
+                </div>
+                <div class="collect-track" data-collect-track>
+                    <button style="--tile-image: url('../assets/images/minecraft/15YA-Hub_Collectables-Carousel-H-0_15YA_414x414_01.jpg');"><span>Wallpapers</span><strong>15-Year Anniversary</strong></button>
+                    <button style="--tile-image: url('../assets/images/minecraft/Homepage_Collectables-Carousel-H_Java-Bedrock_414x414_01.jpg');"><span>Wallpaper</span><strong>Minecraft Collection</strong></button>
+                    <button style="--tile-image: url('../assets/images/minecraft/Homepage_Collectables-Carousel-H-0_MCD_414x414_01.jpg');"><span>Wallpaper</span><strong>Minecraft Dungeons</strong></button>
+                    <button style="--tile-image: url('../assets/images/minecraft/Homepage_Collectables-Carousel-H-0_MCL_414x414_01.jpg');"><span>Wallpaper</span><strong>Minecraft Legends</strong></button>
+                    <button style="--tile-image: url('../assets/images/minecraft/Homepage_Collectables-Carousel-H-0_Burberry_414x414_01.jpg');"><span>Wallpaper</span><strong>Burberry Collection</strong></button>
+                    <button style="--tile-image: url('../assets/images/minecraft/Homepage_Collectables-Carousel-H-0_Crocs_414x414_01.jpg');"><span>Wallpaper</span><strong>Crocs Collections</strong></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="follow-section" aria-labelledby="follow-title">
+            <div class="page-shell">
+                <h2 id="follow-title">Follow Minecraft</h2>
+                <nav aria-label="Social links">
+                    <a href="#follow-title" aria-label="Minecraft on YouTube">▶</a>
+                    <a href="#follow-title" aria-label="Minecraft on Instagram">◎</a>
+                    <a href="#follow-title" aria-label="Minecraft on Facebook">f</a>
+                    <a href="#follow-title" aria-label="Minecraft on X">X</a>
+                    <a href="#follow-title" aria-label="Minecraft on TikTok">♪</a>
+                    <a href="#follow-title" aria-label="Minecraft on WhatsApp">◔</a>
+                    <a href="#follow-title" aria-label="Minecraft on Discord">☁</a>
+                    <a href="#follow-title" aria-label="Minecraft on Spotify">●</a>
+                </nav>
+            </div>
+        </section>
+    </main>
 
     <footer class="mc-footer">
-        
+        <div class="page-shell footer-grid">
+            <div class="footer-brand">
+                <div class="footer-studios" aria-label="Studio logos">
+                    <img src="./assets/images/Mojang2020Logo.png" alt="Mojang Studios">
+                    <img src="./assets/images/minecraft/Logo_Xbox_Game_Studio.png" alt="Xbox Game Studios">
+                </div>
+                <p>© 2026 Mojang AB. TM Microsoft Corporation.</p>
+                <nav class="footer-policy-mini" aria-label="Minecraft policies">
+                    <a href="#main-content">Minecraft Usage Guidelines</a>
+                    <span aria-hidden="true">|</span>
+                    <a href="#main-content">Manage Consent</a>
+                </nav>
+            </div>
+            <nav aria-label="Footer navigation" class="footer-columns">
+                <div>
+                    <h3>Games</h3>
+                    <a href="#games-title">Minecraft</a>
+                    <a href="#games-title">Minecraft Dungeons II</a>
+                    <a href="#games-title">Minecraft Dungeons</a>
+                    <a href="#games-title">Minecraft Legends</a>
+                    <a href="#games-title">Minecraft Education</a>
+                </div>
+                <div>
+                    <h3>Community</h3>
+                    <a href="#games-title">Creator Learning Portal</a>
+                    <a href="#games-title">Mojang Studios Careers</a>
+                    <a href="#games-title">Build a Better World</a>
+                    <a href="#games-title">A Minecraft Movie</a>
+                </div>
+                <div>
+                    <h3>Shop</h3>
+                    <a href="#marketplace-title">Marketplace</a>
+                    <a href="#marketplace-title">Minecraft Shop</a>
+                </div>
+                <div>
+                    <h3>Support</h3>
+                    <a href="#main-content">Tips for Beginners</a>
+                    <a href="#main-content">Help</a>
+                    <a href="#main-content">Feedback</a>
+                    <a href="#main-content">Site Map</a>
+                    <a href="#download-title">Download</a>
+                    <a href="#news-title">Contact us</a>
+                </div>
+                <div>
+                    <h3>Account</h3>
+                    <a href="#download-title">Profile</a>
+                    <a href="#download-title">Redeem</a>
+                </div>
+            </nav>
+            <div class="footer-rating">
+                <img src="./assets/svg/esrb_2021%20.svg"
+                    alt="Everyone 10+ ESRB. Fantasy Violence. In-Game Purchases / Users Interact. Online Music Not Rated by the ESRB">
+            </div>
+        </div>
+
+        <div class="legal-strip page-shell">
+            <button type="button" class="language-button" aria-label="Select language">
+                <span class="lang-globe" aria-hidden="true"></span>
+                English
+                <span class="lang-caret" aria-hidden="true"></span>
+            </button>
+            <nav aria-label="Legal links">
+                <a href="#main-content">Privacy and Cookies</a>
+                <a href="#main-content">Consumer Health Privacy</a>
+                <a href="#main-content">Terms of use</a>
+                <a href="#main-content">Trademarks</a>
+                <a href="#main-content">About our ads</a>
+                <span>© 2026 Microsoft</span>
+                <a class="privacy-choice-link" href="#main-content">
+                    <span class="privacy-choice-icon" aria-hidden="true"></span>
+                    Your Privacy Choices
+                </a>
+            </nav>
+            <a class="microsoft-link" href="#main-content" aria-label="Microsoft">
+                <img src="./assets/svg/Logo_%20Microsoft.svg" alt="Microsoft">
+            </a>
+        </div>
     </footer>
 </body>
 
