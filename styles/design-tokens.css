@@ -1,5 +1,5 @@
-@import url("./surface.css");
-@import url("./main.css");
+@import url("./base-reset.css");
+@import url("./layout.css");
 
 :root {
     --mc-core-green-6: #2a641c;
@@ -24,12 +24,22 @@
     --mc-dungeons-orange-4: #ffa41f;
     --mc-legends-blue-5: #00215c;
     --mc-marketplace-gold-3: #ffc42b;
+    --mc-core-paper: #111;
+    --mc-core-pale: #f3f2f1;
     --mc-default-fontlist: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --mc-display-fontlist: "MinecraftTenv2", "MinecraftTen", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --mc-seven-fontlist: "MinecraftSeven-v2", "MinecraftSeven", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --header-height: 78px;
     --page-max: 1180px;
     --shadow-block: 0 12px 0 rgba(0, 0, 0, 0.35);
+    --mc-duration-quick: 120ms;
+    --mc-duration-normal: 160ms;
+    --mc-duration-smooth: 180ms;
+    --mc-duration-slow: 220ms;
+    --mc-elevated-surface: rgba(38, 36, 35, 0.94);
+    --mc-shadow-strong: rgba(0, 0, 0, 0.35);
+    --mc-shadow-mid-tone: rgba(17, 17, 17, 0.34);
+    --mc-shadow-mid-fade: rgba(17, 17, 17, 0.88);
 }
 
 @font-face {
