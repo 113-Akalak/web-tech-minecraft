@@ -4,12 +4,12 @@
 @import url("./responsive.css");
 
 :root {
-    --mc-core-green-6: #2a641c;
-    --mc-core-green-5: #3c8527;
-    --mc-core-green-4: #52a535;
-    --mc-core-green-3: #6cc349;
-    --mc-core-green-2: #86d562;
-    --mc-core-green-1: #a0e081;
+    --lego-red-6: #7a0006;
+    --lego-red-5: #d01012;
+    --lego-red-4: #e51b23;
+    --lego-red-3: #ff3338;
+    --lego-red-2: #ff6b6f;
+    --lego-red-1: #ff9b9e;
     --mc-core-grey-6: #262423;
     --mc-core-grey-5: #3d3938;
     --mc-core-grey-4: #6b6562;
@@ -29,14 +29,11 @@
     --mc-warm-light: #d6d2cf;
     --mc-warm-header: #f6f3f1;
     --mc-core-focus: #1157be;
-    --mc-core-warning: #ca3636;
-    --mc-dungeons-orange-4: #ffa41f;
     --mc-legends-blue-5: #00215c;
     --mc-marketplace-gold-3: #ffc42b;
     --mc-miss-gold: #ffd33f;
     --mc-sparkle-gold: #ffe45a;
     --mc-required-red: #ff605e;
-    --mc-privacy-blue: #2f7cff;
     --mc-elevated-surface: rgba(38, 36, 35, 0.72);
     --mc-miss-bg: #151514;
     --mc-miss-card-bg: #403b39;
@@ -53,8 +50,8 @@
     --mc-shadow-btn-active: rgba(0, 0, 0, 0.28);
     --mc-overlay-border: rgba(208, 197, 192, 0.2);
     --mc-font-body: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --mc-font-display: "MinecraftTenv2", "MinecraftTen", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --mc-font-pixel: "MinecraftSeven-v2", "MinecraftSeven", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mc-font-display: "PixelTenV2", "PixelTen", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mc-font-pixel: "PixelSevenV2", "PixelSeven", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --header-height: 78px;
     --page-max: 1180px;
     --mc-duration-quick: 120ms;
@@ -74,11 +71,11 @@
 }
 
 @font-face {
-    font-family: "MinecraftSeven-v2";
+    font-family: "PixelSevenV2";
     src:
-        url("../assets/fonts/minecraft/Minecraft-Seven_v2.woff2") format("woff2"),
-        url("../assets/fonts/minecraft/Minecraft-Seven_v2.woff") format("woff"),
-        url("../assets/fonts/minecraft/Minecraft-Seven_v2.ttf") format("truetype");
+        url("../assets/fonts/pixel/pixel-seven-v2.woff2") format("woff2"),
+        url("../assets/fonts/pixel/pixel-seven-v2.woff") format("woff"),
+        url("../assets/fonts/pixel/pixel-seven-v2.ttf") format("truetype");
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -86,10 +83,10 @@
 }
 
 @font-face {
-    font-family: "MinecraftSeven";
+    font-family: "PixelSeven";
     src:
-        url("../assets/fonts/minecraft/MinecraftSeven.woff") format("woff"),
-        url("../assets/fonts/minecraft/MinecraftSeven.ttf") format("truetype");
+        url("../assets/fonts/pixel/pixel-seven.woff") format("woff"),
+        url("../assets/fonts/pixel/pixel-seven.ttf") format("truetype");
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -97,10 +94,10 @@
 }
 
 @font-face {
-    font-family: "MinecraftTen";
+    font-family: "PixelTen";
     src:
-        url("../assets/fonts/minecraft/MinecraftTen.woff") format("woff"),
-        url("../assets/fonts/minecraft/MinecraftTen.ttf") format("truetype");
+        url("../assets/fonts/pixel/pixel-ten.woff") format("woff"),
+        url("../assets/fonts/pixel/pixel-ten.ttf") format("truetype");
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -108,11 +105,11 @@
 }
 
 @font-face {
-    font-family: "MinecraftTenv2";
+    font-family: "PixelTenV2";
     src:
-        url("../assets/fonts/minecraft/Minecraft-Tenv2.woff2") format("woff2"),
-        url("../assets/fonts/minecraft/Minecraft-Tenv2.woff") format("woff"),
-        url("../assets/fonts/minecraft/Minecraft-Tenv2.ttf") format("truetype");
+        url("../assets/fonts/pixel/pixel-ten-v2.woff2") format("woff2"),
+        url("../assets/fonts/pixel/pixel-ten-v2.woff") format("woff"),
+        url("../assets/fonts/pixel/pixel-ten-v2.ttf") format("truetype");
     font-style: normal;
     font-weight: 400;
     font-display: swap;

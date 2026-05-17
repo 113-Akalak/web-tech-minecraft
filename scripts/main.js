@@ -73,10 +73,17 @@
             q("[data-hero-link]").textContent = hero.dataset.cta;
             q("[data-hero-link]").href = hero.dataset.href;
             media.dataset.theme = hero.dataset.theme;
-            media.classList.toggle("is-video", hero.dataset.video === "true");
             if (hero.dataset.image) media.style.setProperty("--hero-image", `url("${hero.dataset.image}")`);
             const video = q(".hero-video");
-            hero.dataset.video === "true" ? video?.play().catch(() => { }) : video?.pause();
+            if (hero.dataset.video) {
+                const next = new URL(hero.dataset.video, location.href).href;
+                if (video.src !== next) video.src = hero.dataset.video;
+                media.classList.add("is-video");
+                video.play().catch(() => { });
+            } else {
+                media.classList.remove("is-video");
+                video?.pause();
+            }
             qa(".hero-tab").forEach((el) => {
                 const on = el === hero;
                 el.classList.toggle("is-active", on);

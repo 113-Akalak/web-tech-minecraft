@@ -5,6 +5,7 @@
 }
 
 .navbar {
+    position: relative;
     min-height: var(--header-height);
     display: flex;
     align-items: center;
@@ -22,7 +23,7 @@
     align-items: center;
 
     & .brand-logo {
-        width: clamp(190px, 14.15vw, 224px);
+        width: clamp(54px, 4.45vw, 64px);
         height: auto;
     }
 }
@@ -30,7 +31,7 @@
 .nav-menu {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 36px;
     width: 100%;
 }
@@ -45,8 +46,11 @@
 }
 
 .nav-links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     gap: clamp(30px, 2.65vw, 42px);
-    margin-left: clamp(126px, 15vw, 238px);
+    transform: translate(-50%, -50%);
 }
 
 .nav-actions {
@@ -80,7 +84,7 @@
 
     &:hover,
     &[aria-expanded="true"] {
-        color: var(--mc-core-green-3);
+        color: var(--lego-red-3);
     }
 }
 
@@ -91,7 +95,7 @@
 .nav-link[aria-expanded="true"],
 .account-button[aria-expanded="true"],
 .icon-button[aria-expanded="true"] {
-    box-shadow: inset 0 0 0 1px var(--mc-core-green-5), 0 0 0 2px var(--mc-core-focus);
+    box-shadow: inset 0 0 0 1px var(--lego-red-5), 0 0 0 2px var(--mc-core-focus);
 }
 
 .buy-now-link {
@@ -101,8 +105,8 @@
     gap: 9px;
     width: 105px;
     min-height: 36px;
-    border: 2px solid var(--mc-core-green-5);
-    color: var(--mc-core-green-3);
+    border: 2px solid var(--lego-red-5);
+    color: var(--lego-red-3);
     font-size: 13px;
     font-weight: 900;
     line-height: 1;
@@ -121,9 +125,9 @@
     }
 
     &:hover {
-        background: rgba(60, 133, 39, 0.18);
-        box-shadow: inset 0 0 0 1px rgba(160, 224, 129, 0.35);
-        color: var(--mc-core-green-2);
+        background: rgba(208, 16, 18, 0.18);
+        box-shadow: inset 0 0 0 1px rgba(255, 155, 158, 0.35);
+        color: var(--lego-red-2);
     }
 }
 
@@ -229,7 +233,7 @@
     &:hover,
     &.is-active {
         background: var(--mc-core-grey-5);
-        box-shadow: inset 0 0 0 1px var(--mc-core-green-2);
+        box-shadow: inset 0 0 0 1px var(--lego-red-2);
     }
 }
 
@@ -287,7 +291,7 @@
 .mega-side-links a:hover,
 .account-popover a:hover,
 .search-suggestions a:hover span {
-    color: var(--mc-core-green-2);
+    color: var(--lego-red-2);
 }
 
 .mega-side-links {
@@ -343,8 +347,8 @@
         linear-gradient(var(--mc-core-black) 0 0) 50% 55% / 22% 20% no-repeat,
         linear-gradient(var(--mc-core-black) 0 0) 34% 74% / 20% 24% no-repeat,
         linear-gradient(var(--mc-core-black) 0 0) 66% 74% / 20% 24% no-repeat,
-        var(--mc-core-green-5);
-    box-shadow: inset 0 -7px 0 var(--mc-core-green-6);
+        var(--lego-red-5);
+    box-shadow: inset 0 -7px 0 var(--lego-red-6);
 
     &.creeper-mark--large {
         width: 180px;
@@ -598,19 +602,15 @@
 }
 
 .hero-tab {
+    --hero-tab-fallback: linear-gradient(135deg, #f66c74, #d71920);
+    display: flex;
+    align-items: end;
     width: 120px;
     height: 94px;
     border: 3px solid transparent;
-    background: var(--mc-core-grey-5);
-    padding: 0;
-}
-
-.hero-tab {
-    display: flex;
-    align-items: end;
     background:
         linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.52)),
-        var(--tab-image, linear-gradient(135deg, #f66c74, #d71920));
+        var(--tab-image, var(--hero-tab-fallback));
     background-position: center;
     background-size: cover;
     color: transparent;
@@ -621,24 +621,16 @@
     text-transform: uppercase;
 
     &:nth-child(2) {
-        background:
-            linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.52)),
-            var(--tab-image, linear-gradient(135deg, var(--mc-core-green-1), var(--mc-marketplace-gold-3) 52%, #339cd7));
-        background-position: center;
-        background-size: cover;
+        --hero-tab-fallback: linear-gradient(135deg, var(--lego-red-1), var(--mc-marketplace-gold-3) 52%, #339cd7);
     }
 
     &:nth-child(3) {
-        background:
-            linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.52)),
-            var(--tab-image, linear-gradient(135deg, #00337d, #298aa5));
-        background-position: center;
-        background-size: cover;
+        --hero-tab-fallback: linear-gradient(135deg, #00337d, #298aa5);
     }
 
     &:hover,
     &.is-active {
-        border-color: var(--mc-core-green-3);
+        border-color: var(--lego-red-3);
         transform: none;
     }
 }
@@ -667,7 +659,7 @@
     }
 
     & a {
-        color: var(--mc-core-green-2);
+        color: var(--lego-red-2);
         font-size: 17px;
         font-weight: 900;
     }
@@ -704,7 +696,7 @@
 }
 
 .text-link {
-    color: var(--mc-core-green-2);
+    color: var(--lego-red-2);
     font-size: 17px;
     font-weight: 900;
 }
@@ -953,7 +945,7 @@
     }
 
     & b {
-        color: var(--mc-core-green-1);
+        color: var(--lego-red-1);
         font-size: 18px;
         text-transform: uppercase;
     }
@@ -970,7 +962,7 @@
         position: absolute;
         inset: auto 0 0;
         height: 132px;
-        background: url("../assets/images/minecraft/Marketplace-Pass_Full-Bleed-Image-1200_Ember-Footer_2880x294.png") center bottom / cover no-repeat;
+        background: url("../assets/images/effects/gold-glow-footer.png") center bottom / cover no-repeat;
         opacity: 0.8;
         pointer-events: none;
     }
@@ -1010,7 +1002,7 @@
     font-weight: 900;
 
     &:hover {
-        background: var(--mc-core-green-5);
+        background: var(--lego-red-5);
     }
 }
 
@@ -1040,7 +1032,7 @@
     scroll-snap-align: start;
     background:
         linear-gradient(180deg, rgba(0, 0, 0, 0) 44%, rgba(0, 0, 0, 0.84)),
-        var(--tile-image, linear-gradient(135deg, var(--mc-core-green-3), var(--mc-marketplace-gold-3) 48%, var(--mc-legends-blue-5)));
+        var(--tile-image, linear-gradient(135deg, var(--lego-red-3), var(--mc-marketplace-gold-3) 48%, var(--mc-legends-blue-5)));
     background-position: center;
     background-size: cover;
     border: 0;
@@ -1317,7 +1309,7 @@
         justify-content: flex-end;
         aspect-ratio: 1;
         overflow: hidden;
-        background: var(--news-image, linear-gradient(135deg, var(--mc-core-green-3), var(--mc-legends-blue-5))) center / cover no-repeat;
+        background: var(--news-image, linear-gradient(135deg, var(--lego-red-3), var(--mc-legends-blue-5))) center / cover no-repeat;
         border-bottom: 4px solid #585858;
         color: var(--mc-core-white);
         padding: 0 20px 30px;
@@ -1438,7 +1430,7 @@
     }
 }
 
-.download-creeper {
+.download-logo {
     width: 75px;
     aspect-ratio: 1;
     object-fit: cover;
@@ -1545,11 +1537,11 @@
     & input {
         min-height: 20px;
         padding: 0;
-        accent-color: var(--mc-core-green-5);
+        accent-color: var(--lego-red-5);
     }
 
     & a {
-        color: var(--mc-core-green-3);
+        color: var(--lego-red-3);
     }
 }
 
@@ -1598,7 +1590,7 @@
             align-items: center;
             gap: 8px;
             margin-top: 24px;
-            color: var(--mc-core-green-3);
+            color: var(--lego-red-3);
             font-size: 20px;
             font-weight: 700;
             text-decoration: none;
@@ -1646,7 +1638,7 @@
 
         &:hover {
             background: transparent;
-            color: var(--mc-core-green-3);
+            color: var(--lego-red-3);
         }
     }
 
@@ -1684,7 +1676,7 @@
         width: calc(100% + 32px);
         height: 170px;
         margin: 0 -16px 20px;
-        background: var(--tile-image, linear-gradient(135deg, var(--mc-core-green-3), var(--mc-legends-blue-5))) center / cover no-repeat;
+        background: var(--tile-image, linear-gradient(135deg, var(--lego-red-3), var(--mc-legends-blue-5))) center / cover no-repeat;
     }
 
     &::after {
@@ -1777,7 +1769,7 @@
 
     & .footer-grid {
         display: grid;
-        grid-template-columns: minmax(430px, 500px) minmax(430px, 500px) 242px;
+        grid-template-columns: minmax(430px, 500px) minmax(430px, 500px);
         justify-content: space-between;
         gap: 44px;
         width: 100%;
@@ -1789,7 +1781,7 @@
 
     & .legal-strip {
         display: grid;
-        grid-template-columns: 220px 1fr 220px;
+        grid-template-columns: 220px 1fr;
         gap: 72px;
         align-items: center;
         width: 100%;
@@ -1825,7 +1817,7 @@
 
 .footer-studios {
     display: flex;
-    gap: 62px;
+    gap: 0;
     align-items: center;
     margin-bottom: 38px;
 
@@ -1838,23 +1830,19 @@
             height: auto;
         }
 
-        &:nth-child(2) {
-            width: 205px;
-            height: auto;
-        }
     }
 }
 
 .footer-policy-mini {
     & a {
-        color: var(--mc-core-green-1);
+        color: var(--lego-red-1);
         font-size: 14px;
         font-weight: 500;
         line-height: 1.35;
         text-decoration: none;
 
         &:hover {
-            color: #c8ffb1;
+            color: var(--lego-red-2);
         }
     }
 
@@ -1912,77 +1900,16 @@
     & a {
         display: block;
         margin-bottom: 7px;
-        color: var(--mc-core-green-1);
+        color: var(--lego-red-1);
         font-size: 14px;
         font-weight: 500;
         line-height: 1.35;
         text-decoration: none;
 
         &:hover {
-            color: var(--mc-core-green-2);
+            color: var(--lego-red-2);
         }
     }
-}
-
-.footer-rating {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding-top: 0;
-    transform: none;
-
-    & img {
-        width: 242px;
-        max-width: 100%;
-        background: var(--mc-core-white);
-    }
-}
-
-.language-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    justify-self: start;
-    background: transparent;
-    color: var(--mc-core-white);
-    font-size: 14px;
-    font-weight: 700;
-    padding: 0;
-}
-
-.lang-globe {
-    width: 22px;
-    height: 22px;
-    border: 3px solid var(--mc-core-white);
-    border-radius: 50%;
-    position: relative;
-
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        inset: 4px;
-        border-left: 2px solid var(--mc-core-white);
-        border-right: 2px solid var(--mc-core-white);
-        border-radius: 50%;
-    }
-
-    &::after {
-        inset: 9px 2px;
-        border: 0;
-        border-top: 2px solid var(--mc-core-white);
-        border-bottom: 2px solid var(--mc-core-white);
-        border-radius: 0;
-    }
-}
-
-.lang-caret {
-    width: 8px;
-    height: 8px;
-    margin-left: 7px;
-    border-left: 2px solid var(--mc-core-white);
-    border-top: 2px solid var(--mc-core-white);
-    transform: rotate(45deg);
 }
 
 .legal-strip nav {
@@ -1993,7 +1920,7 @@
     white-space: nowrap;
 
     & a:hover {
-        color: var(--mc-core-green-2);
+        color: var(--lego-red-2);
     }
 }
 
@@ -2006,53 +1933,4 @@
 
 .legal-strip a {
     text-decoration: none;
-}
-
-.privacy-choice-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.privacy-choice-icon {
-    display: inline-block;
-    width: 30px;
-    height: 16px;
-    border-radius: 10px;
-    background:
-        radial-gradient(circle at 28% 50%, var(--mc-core-white) 0 4px, transparent 4px),
-        radial-gradient(circle at 72% 50%, var(--mc-core-white) 0 4px, transparent 4px),
-        var(--mc-privacy-blue);
-    position: relative;
-
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        top: 8px;
-        width: 9px;
-        height: 2px;
-        background: var(--mc-privacy-blue);
-    }
-
-    &::before {
-        left: 6px;
-        transform: rotate(45deg);
-    }
-
-    &::after {
-        right: 6px;
-        transform: rotate(-45deg);
-    }
-}
-
-.microsoft-link {
-    display: inline-flex;
-    justify-self: start;
-    transform: translateX(-23px);
-
-    & img {
-        width: 143px;
-        max-width: 100%;
-    }
 }
