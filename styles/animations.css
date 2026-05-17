@@ -1,0 +1,137 @@
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mega-panel:not([hidden]),
+.search-overlay:not([hidden]) {
+    animation: slideDown var(--mc-duration-slow) ease;
+}
+
+.account-popover:not([hidden]) {
+    animation: slideDown var(--mc-duration-normal) ease;
+}
+
+.buy-now-link {
+    transition:
+        background var(--mc-duration-quick) ease,
+        box-shadow var(--mc-duration-quick) ease,
+        color var(--mc-duration-quick) ease;
+}
+
+.nav-link,
+.account-button {
+    transition: color var(--mc-duration-quick) ease;
+}
+
+.hero-tab {
+    transition:
+        border-color var(--mc-duration-normal) ease,
+        transform var(--mc-duration-normal) ease;
+}
+
+.game-art img {
+    transition: transform var(--mc-duration-slow) ease;
+}
+
+.btn-gold {
+    transition:
+        filter var(--mc-duration-quick) ease,
+        transform var(--mc-duration-quick) ease;
+}
+
+.miss-link {
+    transition: filter var(--mc-duration-quick) ease;
+}
+
+.addon-track article,
+.collect-track button,
+.news-grid a {
+    transition:
+        filter var(--mc-duration-smooth) ease,
+        transform var(--mc-duration-smooth) ease;
+}
+
+.hero-video,
+.hero-media::after {
+    transition: opacity var(--mc-duration-slow) ease;
+}
+
+.reveal {
+    animation: fadeInUp 0.45s ease both;
+}
+
+.reveal .game-card,
+.reveal .news-grid a,
+.reveal .addon-track article,
+.reveal .collect-track button {
+    animation: fadeInUp 0.45s ease both;
+}
+
+.reveal .game-card:nth-child(1),
+.reveal .news-grid a:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.reveal .game-card:nth-child(2),
+.reveal .news-grid a:nth-child(2) {
+    animation-delay: 0.08s;
+}
+
+.reveal .game-card:nth-child(3),
+.reveal .news-grid a:nth-child(3) {
+    animation-delay: 0.16s;
+}
+
+.reveal .game-card:nth-child(4),
+.reveal .news-grid a:nth-child(4) {
+    animation-delay: 0.24s;
+}
+
+.reveal .news-grid a:nth-child(5) { animation-delay: 0.32s; }
+.reveal .news-grid a:nth-child(6) { animation-delay: 0.4s; }
+.reveal .news-grid a:nth-child(7) { animation-delay: 0.48s; }
+.reveal .news-grid a:nth-child(8) { animation-delay: 0.56s; }
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal,
+    .reveal .game-card,
+    .reveal .news-grid a,
+    .reveal .addon-track article,
+    .reveal .collect-track button {
+        opacity: 1;
+        transform: none;
+    }
+}
