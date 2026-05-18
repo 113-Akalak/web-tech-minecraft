@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Perspective Comparison</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f2f5;
+            padding: 50px;
+        }
+
+        h2 { color: #333; }
+
+        .comparison-container {
+            display: flex;
+            gap: 100px;
+            margin-top: 50px;
+        }
+
+        /* 1. Low Perspective (Extreme/Distorted) */
+        .parent-low {
+            perspective: 150px; /* ยิ่งน้อย ยิ่งจ่อใกล้ ยิ่งเบี้ยวแรง */
+        }
+
+        /* 2. High Perspective (Natural/Smooth) */
+        .parent-high {
+            perspective: 1000px; /* ยิ่งมาก ยิ่งมองไกล ยิ่งดูสมจริง */
+        }
+
+        /* ส่วนของการตกแต่งการ์ด */
+        .card {
+            width: 200px;
+            height: 250px;
+            background: linear-gradient(135deg, #2185d0, #005a9e);
+            color: white;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.6s ease; /* ใส่ transition เพื่อความ Smooth */
+            cursor: pointer;
+        }
+
+        /* เมื่อ Hover ให้หมุนการ์ด */
+        .parent-low:hover .card, 
+        .parent-high:hover .card {
+            transform: rotateY(45deg);
+        }
+
+        .card h3 { margin: 0; font-size: 1.5rem; }
+        .card p { font-size: 0.9rem; opacity: 0.8; }
+        
+        .label {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #555;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>CSS Perspective: Low vs High</h2>
+    <p>Hover over the cards to see the 3D rotation effect.</p>
+
+    <div class="comparison-container">
+        
+        <!-- แบบที่ 1: Perspective น้อย -->
+        <div>
+            <div class="parent-low">
+                <div class="card">
+                    <h3>PTT</h3>
+                    <p>Dividend: 4.5%</p>
+                </div>
+            </div>
+            <div class="label">
+                Low Perspective (150px)<br>
+                <code>Extreme & Distorted</code>
+            </div>
+        </div>
+
+        <!-- แบบที่ 2: Perspective มาก -->
+        <div>
+            <div class="parent-high">
+                <div class="card">
+                    <h3>SCB</h3>
+                    <p>Dividend: 5.2%</p>
+                </div>
+            </div>
+            <div class="label">
+                High Perspective (1000px)<br>
+                <code>Natural & Smooth</code>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
